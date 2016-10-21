@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>WuHanParking</display-name>
+  <context-param>
+  	<param-name>contextConfigLocation</param-name>
+  	<param-value>classpath:spring.xml,classpath:spring-redis.xml,classpath:spring-jms.xml,classpath:spring-mybatis.xml</param-value>
+  </context-param>
+  
+  <listener>
+  	<description>spring listener</description>
+  	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  
+  <listener>
+  	<listener-class>com.mgear.wuhanparking.common.listener.CloseListener</listener-class>
+  </listener>
+  
+   <filter>
+    <filter-name>RestyFilter</filter-name>
+    <filter-class>cn.dreampie.route.RestyFilter</filter-class>
+    <init-param>
+      <param-name>exclusions</param-name>
+      <!-- 把不经过Resty过滤的文件或者目录配置在这儿，逗号分割 -->
+      <param-value>/**/*.js,/**/*.gif,/**/*.jpg,/**/*.swf,/**/*.png,/**/*.css,/**/*.ico</param-value>
+    </init-param>
+    <init-param>
+      <!-- Resty的核心配置文件 -->
+      <param-name>configClass</param-name>
+      <param-value>com.mgear.wuhanparking.resty.AppConfig</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>RestyFilter</filter-name>
+    <!-- 过滤的路径 -->
+    <url-pattern>/API/*</url-pattern>
+  </filter-mapping>
+  
+</web-app>

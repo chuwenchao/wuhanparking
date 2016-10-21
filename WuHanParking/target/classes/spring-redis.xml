@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- redis 连接池配置(默认) -->
+	<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig" />
+	
+	<!-- redis 连接工厂配置 -->
+	<bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+		<property name="hostName" value="${redis.host}" />
+		<property name="port" value="${redis.port}" />
+		<property name="password" value="${redis.password}" />
+		<property name="poolConfig" ref="jedisPoolConfig" />
+	</bean>
+	
+	<!-- redis 序列化方式 -->
+	<bean id="stringSerializer" class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+	
+	<!-- redis template -->
+	<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+		<property name="connectionFactory"  ref="jedisConnectionFactory"/>
+		<property name="keySerializer" ref="stringSerializer" />
+		<property name="valueSerializer" ref="stringSerializer" />
+		<property name="hashKeySerializer" ref="stringSerializer" />
+		<property name="hashValueSerializer" ref="stringSerializer" />
+		<property name="enableTransactionSupport" value="true" />
+	</bean>
+</beans>

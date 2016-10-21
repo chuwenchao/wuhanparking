@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+    
+    <!-- ActiveMQ 提供的可产生Connection的ConnectionFactory -->
+    <bean id="targetConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<property name="brokerURL" value="${ActiveMQ.brokerURL}" />
+    </bean>     
+         
+    <!-- Spring 提供的用于管理 ActiveMQ ConnectionFactory 的 ConnectionFactory -->  
+	<bean id="connectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory">
+		<property name="targetConnectionFactory" ref="targetConnectionFactory" />
+	</bean>
+	
+	<!-- 点对点队列目的地 -->
+	<bean id="queueDestination" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg value="${ActiveMQ.queueDestination}" />
+	</bean>
+	
+	<!-- 订阅/发布模式目的地（一对多） -->
+	<bean id="topicDestination" class="org.apache.activemq.command.ActiveMQTopic">
+		<constructor-arg value="${ActiveMQ.topicDestination}" />
+	</bean>
+	
+	<!-- Spring JMS Template，它可以进行消息发送、接收等 -->
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory" ref="connectionFactory" />
+		<!-- 指定 jmsTemplate 发送消息的默认 Destination -->
+		<property name="defaultDestination" ref="queueDestination" />
+	</bean>
+	
+	<!-- 消息监听器（消费消息） -->
+	<bean id="consumerMessageListener" class="com.mgear.wuhanparking.common.listener.ConsumerMessageListener" />
+	
+	<!-- 消息监听容器（监听目的队列） -->
+	<bean id="messageContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+		<property name="connectionFactory" ref="connectionFactory" />
+		<property name="destination" ref="queueDestination" />  
+    	<property name="messageListener" ref="consumerMessageListener" />  
+		<!-- 并行消费消息的Listener数量区间 -->
+		<property name="concurrency" value="3-6" />
+	</bean>
+	
+</beans>

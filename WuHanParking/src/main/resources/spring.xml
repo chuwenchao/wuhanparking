@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+	
+	<!-- 引入属性文件 -->
+	<context:property-placeholder location="classpath:config.properties"/>
+	
+	<!-- 自动扫描classpath下注解的组件 -->
+	<context:component-scan base-package="com.mgear.*" />
+	
+	<!-- bean 后置处理器，可以自动装配@Autowired、@Resource、@Inject注解的属性。context:component-scan 会自动注册该实例。 -->
+	<!-- <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" /> -->
+	
+	<!-- 使AspectJ 注解起作用 ：自动为匹配的类生成代理对象 -->
+	<aop:aspectj-autoproxy expose-proxy="true" /> 
+
+	<!-- 测试示例 -->
+	<bean id="testRedis" class="com.mgear.wuhanparking.redis.TestRedis"></bean>
+	
+	<!-- 业务beans -->
+	<bean id="testService" class="com.mgear.wuhanparking.service.impl.TestServiceImpl" />
+	<bean id="messageSender" class="com.mgear.wuhanparking.common.activemq.MessageSender" />
+
+</beans>

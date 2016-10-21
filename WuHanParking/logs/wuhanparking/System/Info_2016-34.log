@@ -1,0 +1,51 @@
+2016-08-15 11:52:39 INFO [DruidDataSource.java:721] {dataSource-1} inited
+2016-08-15 11:52:41 INFO [Aop.java:37] 服务名：TestService.add -- 输入参数：{"table":{"tableName":"Pub_Query","row":{"CurrentPage":"1","PageRecord":"10","Name":""}}}
+2016-08-15 11:52:41 INFO [Aop.java:42] 执行时间：110 ms
+2016-08-15 11:52:41 INFO [Aop.java:44] 输出：执行成功！
+2016-08-15 11:52:46 INFO [DruidDataSource.java:1436] {dataSource-1} closed
+2016-08-15 11:53:16 INFO [DruidDataSource.java:721] {dataSource-1} inited
+2016-08-15 11:54:03 INFO [Aop.java:37] 服务名：TestService.add -- 输入参数：{"table":{"tableName":"Pub_Query","row":{"CurrentPage":"1","PageRecord":"10","Name":""}}}
+2016-08-15 11:54:03 INFO [Aop.java:42] 执行时间：111 ms
+2016-08-15 11:54:03 INFO [Aop.java:44] 输出：执行成功！
+2016-08-15 11:54:05 INFO [DruidDataSource.java:1436] {dataSource-1} closed
+2016-08-15 14:03:07 INFO [DruidDataSource.java:721] {dataSource-1} inited
+2016-08-15 14:03:38 INFO [Aop.java:37] 服务名：TestService.add -- 输入参数：{"table":{"tableName":"Pub_Query","row":{"CurrentPage":"1","PageRecord":"10","Name":""}}}
+2016-08-15 14:03:40 INFO [Aop.java:42] 执行时间：1311 ms
+2016-08-15 14:03:41 INFO [Aop.java:44] 输出：执行成功！
+2016-08-15 14:03:43 INFO [DruidDataSource.java:1436] {dataSource-1} closed
+2016-08-15 14:11:55 INFO [DruidDataSource.java:721] {dataSource-1} inited
+2016-08-15 14:11:56 INFO [Aop.java:37] 服务名：TestService.add -- 输入参数：{"table":{"tableName":"Pub_Query","row":{"CurrentPage":"1","PageRecord":"10","Name":""}}}
+2016-08-15 14:11:56 INFO [Aop.java:42] 执行时间：109 ms
+2016-08-15 14:11:56 INFO [Aop.java:44] 输出：执行成功！
+2016-08-15 14:12:01 INFO [DruidDataSource.java:1436] {dataSource-1} closed
+2016-08-15 14:48:49 INFO [DruidDataSource.java:721] {dataSource-1} inited
+2016-08-15 14:48:50 INFO [Aop.java:37] 服务名：TestService.add -- 输入参数：{"table":{"tableName":"Pub_Query","row":{"CurrentPage":"1","PageRecord":"10","Name":""}}}
+2016-08-15 14:48:51 INFO [Aop.java:42] 执行时间：109 ms
+2016-08-15 14:48:51 INFO [Aop.java:44] 输出：执行成功！
+2016-08-15 14:48:55 INFO [DruidDataSource.java:1436] {dataSource-1} closed
+2016-08-15 14:50:08 INFO [DruidDataSource.java:721] {dataSource-1} inited
+2016-08-15 14:50:14 INFO [DruidDataSource.java:1436] {dataSource-1} closed
+2016-08-15 14:50:46 INFO [DruidDataSource.java:721] {dataSource-1} inited
+2016-08-15 14:53:59 INFO [DruidDataSource.java:1436] {dataSource-1} closed
+2016-08-15 14:54:24 INFO [DruidDataSource.java:721] {dataSource-1} inited
+2016-08-15 14:54:31 INFO [DruidDataSource.java:1436] {dataSource-1} closed
+2016-08-15 14:54:48 INFO [DruidDataSource.java:721] {dataSource-1} inited
+2016-08-15 14:54:55 INFO [DruidDataSource.java:1436] {dataSource-1} closed
+2016-08-15 15:18:54 INFO [DruidDataSource.java:721] {dataSource-1} inited
+2016-08-15 15:18:56 INFO [Aop.java:37] 服务名：TestService.add -- 输入参数：{"table":{"tableName":"Pub_Query","row":{"CurrentPage":"1","PageRecord":"10","Date":"2016-8-15 3:6"}}}
+2016-08-15 15:18:56 INFO [Aop.java:42] 执行时间：109 ms
+2016-08-15 15:18:56 INFO [Aop.java:44] 输出：执行成功！
+2016-08-15 15:19:01 INFO [DruidDataSource.java:1436] {dataSource-1} closed
+2016-08-15 15:20:10 INFO [DruidDataSource.java:721] {dataSource-1} inited
+2016-08-15 15:20:17 INFO [DruidDataSource.java:1436] {dataSource-1} closed
+2016-08-15 15:20:51 INFO [DruidDataSource.java:721] {dataSource-1} inited
+2016-08-15 15:20:58 INFO [DruidDataSource.java:1436] {dataSource-1} closed
+2016-08-15 15:21:46 INFO [DruidDataSource.java:721] {dataSource-1} inited
+2016-08-15 15:21:53 INFO [DruidDataSource.java:1436] {dataSource-1} closed
+2016-08-15 15:23:12 INFO [DruidDataSource.java:721] {dataSource-1} inited
+2016-08-15 15:23:13 INFO [Aop.java:37] 服务名：TestService.add -- 输入参数：{"table":{"tableName":"Pub_Query","row":{"CurrentPage":"1","PageRecord":"10","DateTime":"2016-8-15 3:06"}}}
+2016-08-15 15:23:14 INFO [Aop.java:42] 执行时间：125 ms
+2016-08-15 15:23:14 INFO [Aop.java:44] 输出：执行成功！
+2016-08-15 15:23:18 INFO [DruidDataSource.java:1436] {dataSource-1} closed
+2016-08-15 15:26:19 INFO [DruidDataSource.java:721] {dataSource-1} inited
+2016-08-15 15:26:26 INFO [DruidDataSource.java:1436] {dataSource-1} closed

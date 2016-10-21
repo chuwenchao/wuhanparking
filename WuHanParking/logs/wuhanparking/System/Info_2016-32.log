@@ -1,0 +1,12 @@
+2016-08-01 15:52:23 INFO [DruidDataSource.java:721] {dataSource-1} inited
+2016-08-01 15:52:23 INFO [DruidDataSource.java:1436] {dataSource-1} closed
+2016-08-01 15:53:33 INFO [DruidDataSource.java:721] {dataSource-1} inited
+2016-08-01 15:53:34 INFO [DruidDataSource.java:1436] {dataSource-1} closed
+2016-08-03 14:48:13 INFO [DruidDataSource.java:721] {dataSource-1} inited
+2016-08-03 14:48:15 INFO [DruidDataSource.java:1436] {dataSource-1} closed
+2016-08-03 16:19:51 INFO [DruidDataSource.java:721] {dataSource-1} inited
+2016-08-03 16:20:40 INFO [DruidDataSource.java:1436] {dataSource-1} closed
+2016-08-03 16:21:26 INFO [DruidDataSource.java:721] {dataSource-1} inited
+2016-08-03 16:21:30 INFO [DruidDataSource.java:1436] {dataSource-1} closed
+2016-08-05 16:39:01 INFO [DruidDataSource.java:721] {dataSource-1} inited
+2016-08-05 16:39:07 INFO [DruidDataSource.java:1436] {dataSource-1} closed

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mgear.wuhanparking.dao.TestMapper">
+  <select id="getList" resultType="map">
+    select * from sys_user where usertype = 1
+  </select>
+
+  <insert id="add">
+  	insert into Pub_Dictionary(DictCode, DictName) values (uuid(), '测试')
+  </insert>
+</mapper>
